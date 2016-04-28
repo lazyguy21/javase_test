@@ -1,10 +1,13 @@
 package org.yyf.javase.io;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 /**
- * dddd
+ *
  * Created by yeyf on 2014-11-5.
  * */
 public class ClassPathFileReader {
