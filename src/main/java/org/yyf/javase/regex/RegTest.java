@@ -40,7 +40,7 @@ public class RegTest {
         String name4 = "abCe";
         Matcher matcher = Pattern.compile("ab[cd]e").matcher(name4);//false
         boolean matches = matcher.matches();
-        matcher.appendReplacement()
+//        matcher.appendReplacement()
         System.out.println(matches);
 
     }
