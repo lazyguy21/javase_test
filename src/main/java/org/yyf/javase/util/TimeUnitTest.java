@@ -9,5 +9,11 @@ public class TimeUnitTest {
     public static void main(String[] args) {
         long durationInSeconds = TimeUnit.SECONDS.convert(1L, TimeUnit.MINUTES);
         System.out.println(durationInSeconds);
+
+        long l = System.nanoTime();
+        System.out.println(l);
+
+        long l2 = System.nanoTime();
+        System.out.println(l2);
     }
 }
