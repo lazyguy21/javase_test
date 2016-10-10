@@ -18,7 +18,6 @@ public class ResourcesDemo {
             InputStream inputStream = resource.openStream();
             String s = new String(ByteStreams.toByteArray(inputStream), Charsets.UTF_8);
             System.out.println(s);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
