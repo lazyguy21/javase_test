@@ -55,6 +55,5 @@ public class IOTest {
     }
     @Test
     public void testSource(){
-        Files.as
     }
 }
