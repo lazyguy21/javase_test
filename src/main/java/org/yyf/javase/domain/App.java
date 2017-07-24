@@ -7,6 +7,19 @@ public class App {
     private Long id;
     private String name;
 
+    public App(final Long id) {
+        this.id = id;
+    }
+
+    public App(final Long id, final String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public App() {
+
+    }
+
     public String getName() {
         return name;
     }
