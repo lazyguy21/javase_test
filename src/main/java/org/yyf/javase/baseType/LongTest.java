@@ -1,5 +1,12 @@
 package org.yyf.javase.baseType;
 
+import org.junit.Test;
+
+import com.google.common.collect.Maps;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+
 /**
  * Created by tobi on 16-9-12.
  */
@@ -9,5 +16,10 @@ public class LongTest {
         Long t2 = 1023123122L;
         System.out.println(t == 1023123122L);
         System.out.println(t == t2);
+        HashMap<Object, Object> objectObjectHashMap = Maps.newHashMap();
+        objectObjectHashMap.put(null, null);
+        objectObjectHashMap.put(null, null);
+        System.out.println(objectObjectHashMap);
     }
+
 }
