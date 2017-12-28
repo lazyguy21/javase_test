@@ -3,7 +3,7 @@ package org.yyf.javase.annotation;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
-@BaseDemo(name = "tobi",friends = "123")
+@BaseDemo(name = "tobi",friends = {"123","234"})
 public class Client {
   public static void main(String[] args) throws Exception {
     Class<?> aClass = Client.class;
