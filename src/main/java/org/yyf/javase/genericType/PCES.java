@@ -31,7 +31,7 @@ public class PCES {
     list = new ArrayList<Integer>();
     list = new ArrayList<Double>();
 
-    List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
+//    List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
     List<Number> list2 = Lists.newArrayList(1, new Double(2), new Float(1.2), 4, 5, 6L);
     Collections.copy(list2,list);
 
