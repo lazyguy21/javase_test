@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context useHttpOnly="false">
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+  <Resource name="jdbc/wmpool" auth="Container"
+            type="javax.sql.DataSource" factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+            url="jdbc:oracle:thin:@10.18.19.32:1521:testdb2"
+            username="wmprod" password="wmsg20" maxActive="150" maxIdle="10" minIdle="3" initialSize="10"
+            maxWait="-1" removeAbandonedTimeout="60" removeAbandoned="true" logAbandoned="true" />
+  <Resource name="jdbc/slpool" auth="Container"
+            type="javax.sql.DataSource" factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+            url="jdbc:oracle:thin:@10.18.19.32:1521:testdb2"
+            username="slprod" password="U3F3A3C4694CF47C" maxActive="150" maxIdle="10" minIdle="3" initialSize="10"
+            maxWait="-1" removeAbandonedTimeout="1200" removeAbandoned="false" logAbandoned="true"
+            testWhileIdle="true" testOnReturn="false" timeBetweenEvictionRunsMillis="120000"
+            minEvictableIdleTimeMillis="1200000" />
+  <Resource name="jdbc/quartzpool" auth="Container"
+            type="javax.sql.DataSource" factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+            url="jdbc:oracle:thin:@10.18.19.32:1521:testdb2"
+            username="quartz" password="quartz" maxActive="150" maxIdle="10" minIdle="3" initialSize="10"
+            maxWait="-1" removeAbandonedTimeout="1200" removeAbandoned="false" logAbandoned="true"
+            testWhileIdle="true" testOnReturn="false" timeBetweenEvictionRunsMillis="120000"
+            minEvictableIdleTimeMillis="1200000" />
+  <Resource name="jdbc/mysql" auth="Container"
+            type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://1.common.mysql.demo.sl.com:3306/athena"
+            username="athena" password="uc_246e96199fa4_athena" maxActive="50" maxIdle="30" maxWait="10000"
+            initialSize="20" />
+  <Resource name="mysql/drmain" auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://1.common.mysql.demo.sl.com:3306/drmain"
+            username="drmain"
+            password="uc_246e96199fa4_drmain"
+            maxActive="50"
+            maxIdle="30"
+            maxWait="10000"
+            filters="stat" />
+</Context>
