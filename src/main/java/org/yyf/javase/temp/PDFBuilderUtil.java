@@ -101,13 +101,6 @@
 //
 //
 //            //byte[] bytes = PDFBuilder.createPDF("L1-L2债权转让协议",map);
-//            //byte[] bytes = PDFBuilder.createPDF("L2-LN债权转让协议",map);
-//            //byte[] bytes = PDFBuilder.createPDF("借款项目发布申请书",map);
-//            //byte[] bytes = PDFBuilder.createPDF("应收账款质押合同",map);
-//            //byte[] bytes = PDFBuilder.createPDF("授权委托书-点融",map);
-//            //byte[] bytes = PDFBuilder.createPDF("点融网-借款服务协议",map);
-//            //byte[] bytes = PDFBuilder.createPDF("点融网-用户注册协议",map);
-//            byte[] bytes = PDFBuilderUtil.createPDF("点融网借款人费用表",map);
 //
 //            FileOutputStream fileOutputStream = new FileOutputStream("/Users/weilongshi/Desktop/demo.pdf");
 //            fileOutputStream.write(bytes);
