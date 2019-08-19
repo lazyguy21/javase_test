@@ -18,6 +18,10 @@ public class SimpleTest {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String lastOperateDateString = simpleDateFormat.format(new Date());
         System.out.println(lastOperateDateString);
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String dueDate = format.format(new Date());
+        System.out.println(dueDate);
     }
 
 }

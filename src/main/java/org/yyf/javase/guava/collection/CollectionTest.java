@@ -1,12 +1,12 @@
 package org.yyf.javase.guava.collection;
 
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.HashMultiset;
+import com.google.common.base.Predicates;
+import com.google.common.collect.*;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -48,5 +48,14 @@ public class CollectionTest {
         System.out.println("logfileMap:" + logfileMap);
         BiMap<String, Integer> filelogMap = logfileMap.inverse();
         System.out.println("filelogMap:" + filelogMap);
+    }
+
+    @Test
+    public void t() {
+        List<Long> list = Lists.newArrayList(1L,2L,3L,4L,5L,5L,2L,6L,6L,null,8L);
+        List<Long> resultAfterFilter = Lists.newArrayList(
+                ImmutableSet.copyOf(
+                        Iterables.filter(list, Predicates.not(Predicates.isNull()))));
+        System.out.println(resultAfterFilter);
     }
 }

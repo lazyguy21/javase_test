@@ -7,14 +7,14 @@ import java.io.*;
  */
 public class FileSaver {
     public static void main(String[] args) throws IOException {
-        String str = "testdasdfadf";
-        File test = new File("Testt.txt");
-        test.createNewFile();
-        FileWriter fileWriter = new FileWriter(test);
-        fileWriter.write(str.toCharArray());
-        fileWriter.close();
+//        String str = "testdasdfadf";
+//        File test = new File("Testt.txt");
+//        test.createNewFile();
+//        FileWriter fileWriter = new FileWriter(test);
+//        fileWriter.write(str.toCharArray());
+//        fileWriter.close();
 
-
-
+        boolean aFalse = Boolean.valueOf("false") == false;
+        System.out.println(aFalse);
     }
 }

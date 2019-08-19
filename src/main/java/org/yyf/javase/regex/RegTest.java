@@ -44,4 +44,21 @@ public class RegTest {
         System.out.println(matches);
 
     }
+
+    @Test
+    public void start() {
+       Pattern pattern= Pattern.compile("\\.com+");
+      Matcher matcher = pattern.matcher(".commmmm");
+      boolean matches = matcher.matches();
+      System.out.println(matches);
+    }
+
+  @Test
+  public void t() {
+//  花括号 开头,除了/以外的任何字符一个或多个,最后接花括号
+    Pattern pattern = Pattern.compile("\\{[^/]+?\\}");
+    String src = "{adfadf}";
+    boolean matches = pattern.matcher(src).matches();
+    System.out.println(matches);
+  }
 }

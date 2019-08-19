@@ -25,7 +25,7 @@
 //
 //    private PDFBuilderUtil() {
 //    }
-//    private static final  String TEMP_PATH = "/template/dianrong/";
+//    private static final  String TEMP_PATH = "/template/";
 //
 //    private static Configuration cfg;
 //

@@ -2,6 +2,7 @@ package org.yyf.javase.baseType;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class BigDecimalTest {
     public static void main(String[] args) {
@@ -33,5 +34,8 @@ public class BigDecimalTest {
         BigDecimal subtract = a.divide(b, MathContext.DECIMAL32);
 
         System.out.println(subtract);
+
+        BigDecimal bigDecimal = new BigDecimal("12.238").setScale(2, RoundingMode.CEILING);
+        System.out.println(bigDecimal);
     }
 }

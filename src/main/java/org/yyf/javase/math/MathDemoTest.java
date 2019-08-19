@@ -2,6 +2,9 @@ package org.yyf.javase.math;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.util.Objects;
+
 /**
  * Created by @author yyf on 2019-04-10.
  */
@@ -39,4 +42,12 @@ public class MathDemoTest {
         System.out.println(After3);
     }
 
+    @Test
+    public void tetstCell() {
+        BigDecimal bigDecimal = BigDecimal.ZERO.setScale(2, BigDecimal.ROUND_CEILING);
+        System.out.println(bigDecimal.compareTo(BigDecimal.ZERO)==0);
+        System.out.println(Objects.equals(bigDecimal,BigDecimal.ZERO));
+        System.out.println(bigDecimal.equals(BigDecimal.ZERO));
+        System.out.println(bigDecimal);
+    }
 }

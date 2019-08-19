@@ -19,5 +19,18 @@ public class IntegerEqual {
         Integer i5 = 127;
         Integer i6 = 127;
         System.out.println(i5==i6);
+
+
+        double v = 11 * 0.3;
+        System.out.println(v);
+        int a = (int) v;
+        System.out.println(a);
+
+
+        System.out.println(Boolean.valueOf(null));
+        System.out.println(Boolean.valueOf(""));
+        System.out.println(Boolean.valueOf("true"));
+        System.out.println(Boolean.valueOf("0"));
+        System.out.println(Boolean.valueOf("1"));
     }
 }
