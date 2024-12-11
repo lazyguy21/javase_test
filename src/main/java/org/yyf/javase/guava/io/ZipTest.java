@@ -1,0 +1,151 @@
+package org.yyf.javase.guava.io;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+/**
+ * Created by @author yyf on 2024/10/15.
+ */
+public class ZipTest {
+
+  private static final String  content = """
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+    asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+    asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+    asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+    asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  asdfasdfasdfasdfasdfasdfadsfasdfasdfadfasd
+  """;
+
+  public static void main(String[] args) throws IOException {
+    FileOutputStream fileOutputStream = new FileOutputStream("my.zip");
+    ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+
+    for (int i = 0; i < 1000000; i++) {
+      ZipEntry zipEntry = new ZipEntry(String.valueOf(i));
+      zipOutputStream.putNextEntry(zipEntry);
+      zipOutputStream.write(content.getBytes(StandardCharsets.UTF_8));
+      zipOutputStream.flush();
+    }
+    zipOutputStream.close();
+
+  }
+
+}

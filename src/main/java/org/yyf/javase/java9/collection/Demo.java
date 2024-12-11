@@ -1,5 +1,6 @@
 package org.yyf.javase.java9.collection;
 
+import java.util.HashMap;
 import org.junit.Test;
 import org.yyf.javase.Color;
 import org.yyf.javase.Student;
@@ -34,5 +35,10 @@ public class Demo {
       String name = student.getName();
     }
 
+  }
+
+  @Test
+  public void map() {
+    Map<String, String> map = new HashMap<>();
   }
 }

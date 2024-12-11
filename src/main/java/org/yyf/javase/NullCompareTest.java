@@ -1,5 +1,7 @@
 package org.yyf.javase;
 
+import java.util.Objects;
+
 /**
  * Created by tobi on 16-8-23.
  */
@@ -13,6 +15,6 @@ public class NullCompareTest {
         }
         */
 //        System.out.println(true==a);//同理
-
+        System.out.println(Objects.equals(null, null));
     }
 }

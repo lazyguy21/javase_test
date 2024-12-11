@@ -58,4 +58,12 @@ public class CollectionTest {
                         Iterables.filter(list, Predicates.not(Predicates.isNull()))));
         System.out.println(resultAfterFilter);
     }
+
+    @Test
+    public void testList(){
+        ArrayList<Integer> a = Lists.newArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> b = Lists.newArrayList(1, 2, 3, 4, 11, 12);
+        boolean b1 = a.removeAll(b);
+        System.out.println(a);
+    }
 }
